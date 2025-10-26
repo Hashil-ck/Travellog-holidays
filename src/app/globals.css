@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Luxury Button Styles */
+  .btn-luxury {
+    @apply relative overflow-hidden bg-gradient-to-r from-luxury-gold to-accent-500 text-luxury-black font-luxury font-semibold px-8 py-4 rounded-none border-2 border-luxury-gold transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-luxury-gold/25;
+  }
+
+  .btn-luxury::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-luxury-white to-luxury-platinum opacity-0 transition-opacity duration-500;
+  }
+
+  .btn-luxury:hover::before {
+    @apply opacity-20;
+  }
+
+  .btn-secondary-luxury {
+    @apply bg-transparent hover:bg-luxury-gold text-luxury-gold hover:text-luxury-black font-luxury font-semibold px-8 py-4 rounded-none border-2 border-luxury-gold transition-all duration-500 transform hover:scale-105;
+  }
+
+  /* Luxury Section Styles */
+  .section-luxury {
+    @apply py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden;
+  }
+
+  .container-luxury {
+    @apply max-w-7xl mx-auto relative z-10;
+  }
+
+  /* Luxury Text Styles */
+  .text-luxury-gradient {
+    @apply bg-gradient-to-r from-luxury-gold via-accent-400 to-fashion-rose bg-clip-text text-transparent;
+  }
+
+  .text-display {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  .text-luxury {
+    @apply font-luxury font-medium tracking-wide;
+  }
+
+  /* 3D Card Effects */
+  .card-3d {
+    @apply transform-gpu transition-all duration-700 hover:scale-105;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d:hover {
+    transform: scale(1.05) rotateY(6deg);
+  }
+
+  .card-3d-inner {
+    @apply transform-gpu transition-transform duration-700;
+    transform-style: preserve-3d;
+  }
+
+  /* Parallax Elements */
+  .parallax-element {
+    @apply transform-gpu;
+    will-change: transform;
+  }
+
+  /* Luxury Glass Effect */
+  .glass-luxury {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+
+  /* Shimmer Effect */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* Luxury Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4af37, #f2760a);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f2760a, #d4af37);
+}
+
+/* Loading animation */
+.loading-dots {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading-dots div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #4a6b50;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loading-dots div:nth-child(1) {
+  left: 8px;
+  animation: loading-dots1 0.6s infinite;
+}
+
+.loading-dots div:nth-child(2) {
+  left: 8px;
+  animation: loading-dots2 0.6s infinite;
+}
+
+.loading-dots div:nth-child(3) {
+  left: 32px;
+  animation: loading-dots2 0.6s infinite;
+}
+
+.loading-dots div:nth-child(4) {
+  left: 56px;
+  animation: loading-dots3 0.6s infinite;
+}
+
+@keyframes loading-dots1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loading-dots3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes loading-dots2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* Advanced Animations for Luxury Design */
+
+/* Float animation for hero section */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Luxury Glow Effect */
+@keyframes luxury-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(212, 175, 55, 0.3),
+      0 0 40px rgba(212, 175, 55, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(212, 175, 55, 0.6),
+      0 0 60px rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* 3D Rotation */
+@keyframes rotate-3d {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  25% {
+    transform: rotateY(90deg) rotateX(10deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(0deg);
+  }
+  75% {
+    transform: rotateY(270deg) rotateX(-10deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(0deg);
+  }
+}
+
+/* Parallax Movement */
+@keyframes parallax-slow {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes parallax-fast {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+/* Luxury Shimmer */
+@keyframes luxury-shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+/* Morphing Background */
+@keyframes morph-bg {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+/* Luxury Pulse */
+@keyframes luxury-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Utility Classes for 3D Effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.rotate-y-6 {
+  transform: rotateY(6deg);
+}
+
+.rotate-x-6 {
+  transform: rotateX(6deg);
+}
+
+.rotate-z-6 {
+  transform: rotateZ(6deg);
+}
+
+/* Luxury Text Effects */
+.text-shadow-luxury {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.text-shadow-glow {
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(212, 175, 55, 0.2);
+}
