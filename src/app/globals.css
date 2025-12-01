@@ -19,9 +19,9 @@
 }
 
 @layer components {
-  /* Luxury Button Styles */
+  /* Luxury Button Styles - Updated with new primary color */
   .btn-luxury {
-    @apply relative overflow-hidden bg-gradient-to-r from-luxury-gold to-accent-500 text-luxury-black font-luxury font-semibold px-8 py-4 rounded-none border-2 border-luxury-gold transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-luxury-gold/25;
+    @apply relative overflow-hidden bg-gradient-to-r from-primary-500 to-primary-600 text-luxury-white font-luxury font-semibold px-8 py-4 rounded-full border-2 border-primary-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/25;
   }
 
   .btn-luxury::before {
@@ -34,7 +34,7 @@
   }
 
   .btn-secondary-luxury {
-    @apply bg-transparent hover:bg-luxury-gold text-luxury-gold hover:text-luxury-black font-luxury font-semibold px-8 py-4 rounded-none border-2 border-luxury-gold transition-all duration-500 transform hover:scale-105;
+    @apply bg-transparent hover:bg-primary-500 text-primary-500 hover:text-luxury-white font-luxury font-semibold px-8 py-4 rounded-full border-2 border-primary-500 transition-all duration-500 transform hover:scale-105;
   }
 
   /* Luxury Section Styles */
@@ -48,7 +48,7 @@
 
   /* Luxury Text Styles */
   .text-luxury-gradient {
-    @apply bg-gradient-to-r from-luxury-gold via-accent-400 to-fashion-rose bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-500 via-primary-400 to-accent-600 bg-clip-text text-transparent;
   }
 
   .text-display {
@@ -82,7 +82,7 @@
 
   /* Luxury Glass Effect */
   .glass-luxury {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+    @apply bg-black/40 backdrop-blur-xl border border-white/15 rounded-2xl;
   }
 
   /* Shimmer Effect */
@@ -95,9 +95,113 @@
     @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12;
     animation: shimmer 2s linear infinite;
   }
+
+  /* Pattern Backgrounds */
+  .pattern-dots {
+    background-image: radial-gradient(
+      circle,
+      rgba(82, 112, 78, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 20px 20px;
+  }
+
+  .pattern-diagonal {
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(82, 112, 78, 0.05) 0px,
+      rgba(82, 112, 78, 0.05) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+
+  .pattern-grid {
+    background-image:
+      linear-gradient(rgba(82, 112, 78, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(82, 112, 78, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .pattern-mesh {
+    background-image:
+      linear-gradient(
+        0deg,
+        transparent 24%,
+        rgba(82, 112, 78, 0.05) 25%,
+        rgba(82, 112, 78, 0.05) 26%,
+        transparent 27%,
+        transparent 74%,
+        rgba(82, 112, 78, 0.05) 75%,
+        rgba(82, 112, 78, 0.05) 76%,
+        transparent 77%,
+        transparent
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24%,
+        rgba(82, 112, 78, 0.05) 25%,
+        rgba(82, 112, 78, 0.05) 26%,
+        transparent 27%,
+        transparent 74%,
+        rgba(82, 112, 78, 0.05) 75%,
+        rgba(82, 112, 78, 0.05) 76%,
+        transparent 77%,
+        transparent
+      );
+    background-size: 50px 50px;
+  }
+
+  /* Screen Differentiation Backgrounds */
+  .bg-hero-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(82, 112, 78, 0.1) 0%,
+      rgba(90, 141, 122, 0.08) 50%,
+      rgba(82, 112, 78, 0.12) 100%
+    );
+  }
+
+  .bg-services-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(45, 68, 48, 0.3) 0%,
+      rgba(56, 83, 58, 0.2) 50%,
+      rgba(45, 68, 48, 0.3) 100%
+    );
+  }
+
+  .bg-destinations-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(82, 112, 78, 0.08) 0%,
+      rgba(82, 112, 78, 0.12) 100%
+    );
+  }
+
+  .bg-whychoose-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(245, 247, 242, 0.05) 0%,
+      rgba(82, 112, 78, 0.1) 100%
+    );
+  }
+
+  /* Enhanced Parallax Classes */
+  .parallax-slow {
+    animation: parallax-slow 8s ease-in-out infinite;
+  }
+
+  .parallax-medium {
+    animation: parallax-medium 10s ease-in-out infinite;
+  }
+
+  .parallax-fast {
+    animation: parallax-fast 6s ease-in-out infinite;
+  }
 }
 
-/* Luxury Custom Scrollbar */
+/* Luxury Custom Scrollbar - Updated for new primary color */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -107,12 +211,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #d4af37, #f2760a);
+  background: linear-gradient(180deg, #52704e, #8fa67f);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #f2760a, #d4af37);
+  background: linear-gradient(180deg, #8fa67f, #52704e);
 }
 
 /* Loading animation */

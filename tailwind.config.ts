@@ -9,34 +9,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Luxury color palette inspired by Cutefold and Yodezeen
+        // Forest Green color palette centered on #52704e
         primary: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          800: "#075985",
-          900: "#0c4a6e",
+          50: "#f5f7f2",
+          100: "#e8ede3",
+          200: "#d4dcc8",
+          300: "#b8c5a8",
+          400: "#8fa67f",
+          500: "#52704e",
+          600: "#456345",
+          700: "#38533a",
+          800: "#2d4430",
+          900: "#213028",
         },
         accent: {
-          50: "#fef7ee",
-          100: "#fdedd3",
-          200: "#fbd7a5",
-          300: "#f8ba6d",
-          400: "#f59432",
-          500: "#f2760a",
-          600: "#e35d05",
-          700: "#bc4508",
-          800: "#95370e",
-          900: "#782f0f",
+          50: "#f9f6f1",
+          100: "#f0e6d9",
+          200: "#e3cfb3",
+          300: "#d4b591",
+          400: "#c19a6b",
+          500: "#a68b6d",
+          600: "#8b7355",
+          700: "#705e43",
+          800: "#5a4c38",
+          900: "#463a2d",
         },
         luxury: {
-          gold: "#d4af37",
-          platinum: "#e5e4e2",
+          gold: "#c4a76d",
+          platinum: "#b5a6a4",
           charcoal: "#2d3748",
           navy: "#1a202c",
           cream: "#f7fafc",
@@ -45,12 +45,12 @@ const config: Config = {
           silver: "#c0c0c0",
         },
         fashion: {
-          rose: "#e91e63",
-          emerald: "#00c853",
-          sapphire: "#2196f3",
-          amethyst: "#9c27b0",
-          coral: "#ff5722",
-          teal: "#009688",
+          rose: "#b89696",
+          emerald: "#5a9d7a",
+          sapphire: "#5a8fa6",
+          amethyst: "#7a6b8f",
+          coral: "#b8846d",
+          teal: "#5a9d8f",
         },
       },
       fontFamily: {
@@ -93,8 +93,8 @@ const config: Config = {
           "50%": { transform: "translateY(-20px)" },
         },
         glow: {
-          "0%": { boxShadow: "0 0 5px rgba(212, 175, 55, 0.5)" },
-          "100%": { boxShadow: "0 0 20px rgba(212, 175, 55, 0.8)" },
+          "0%": { boxShadow: "0 0 5px rgba(82, 112, 78, 0.5)" },
+          "100%": { boxShadow: "0 0 20px rgba(82, 112, 78, 0.8)" },
         },
         shimmer: {
           "0%": { transform: "translateX(-100%)" },
@@ -103,6 +103,18 @@ const config: Config = {
         parallax: {
           "0%": { transform: "translateY(0px)" },
           "100%": { transform: "translateY(-50px)" },
+        },
+        "parallax-slow": {
+          "0%": { transform: "translateY(0px)" },
+          "100%": { transform: "translateY(-100px)" },
+        },
+        "parallax-medium": {
+          "0%": { transform: "translateY(0px)" },
+          "100%": { transform: "translateY(-75px)" },
+        },
+        "parallax-fast": {
+          "0%": { transform: "translateY(0px)" },
+          "100%": { transform: "translateY(-150px)" },
         },
       },
       transform: {

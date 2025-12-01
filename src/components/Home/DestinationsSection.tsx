@@ -231,13 +231,16 @@ const DestinationsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="section-luxury bg-gradient-to-b from-luxury-black via-luxury-charcoal to-luxury-black relative overflow-hidden"
+      className="section-luxury bg-destinations-gradient relative overflow-hidden"
     >
-      {/* Luxury Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-32 right-32 w-96 h-96 bg-fashion-sapphire/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-32 left-32 w-80 h-80 bg-fashion-rose/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-luxury-gold/30 rounded-full blur-3xl"></div>
+      {/* Pattern Background */}
+      <div className="absolute inset-0 pattern-diagonal opacity-15 z-0"></div>
+
+      {/* Luxury Background Elements with Parallax */}
+      <div className="absolute inset-0 opacity-15">
+        <div className="absolute top-32 right-32 w-96 h-96 bg-gradient-to-br from-primary-500/20 to-transparent rounded-full blur-3xl parallax-fast"></div>
+        <div className="absolute bottom-32 left-32 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-transparent rounded-full blur-3xl parallax-slow"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-primary-600/15 to-accent-700/10 rounded-full blur-3xl parallax-medium"></div>
       </div>
 
       <div className="container-luxury relative z-10">
@@ -254,7 +257,7 @@ const DestinationsSection = () => {
           </h2>
           <p className="text-xl text-luxury-white/70 max-w-3xl mx-auto font-luxury font-light leading-relaxed">
             Discover the world's most{" "}
-            <span className="text-luxury-gold font-medium">
+            <span className="text-primary-400 font-medium">
               exclusive destinations
             </span>
             through our curated collection of luxury experiences and hidden
@@ -270,7 +273,7 @@ const DestinationsSection = () => {
                 onClick={() => setActiveTab("international")}
                 className={`px-8 py-4 rounded-xl font-luxury font-semibold text-sm tracking-wider transition-all duration-500 ${
                   activeTab === "international"
-                    ? "bg-luxury-gold text-luxury-black"
+                    ? "bg-primary-500 text-luxury-white"
                     : "text-luxury-white/70 hover:text-luxury-white"
                 }`}
               >
@@ -280,7 +283,7 @@ const DestinationsSection = () => {
                 onClick={() => setActiveTab("domestic")}
                 className={`px-8 py-4 rounded-xl font-luxury font-semibold text-sm tracking-wider transition-all duration-500 ${
                   activeTab === "domestic"
-                    ? "bg-luxury-gold text-luxury-black"
+                    ? "bg-primary-500 text-luxury-white"
                     : "text-luxury-white/70 hover:text-luxury-white"
                 }`}
               >
@@ -314,7 +317,7 @@ const DestinationsSection = () => {
 
                 {/* Price Tag */}
                 <div className="absolute top-4 right-4">
-                  <div className="bg-luxury-gold text-luxury-black px-3 py-1 rounded-full text-xs font-luxury font-bold tracking-wider">
+                  <div className="bg-primary-500 text-luxury-white px-3 py-1 rounded-full text-xs font-luxury font-bold tracking-wider">
                     {destination.price}
                   </div>
                 </div>
@@ -324,13 +327,13 @@ const DestinationsSection = () => {
                   {[...Array(destination.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 text-luxury-gold fill-current"
+                      className="h-4 w-4 text-primary-400 fill-current"
                     />
                   ))}
                 </div>
 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-luxury-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
 
               {/* Content */}
@@ -339,7 +342,7 @@ const DestinationsSection = () => {
                   <h3 className="text-xl font-display font-bold text-luxury-white mb-1 tracking-wide">
                     {destination.name}
                   </h3>
-                  <p className="text-sm font-luxury font-semibold text-luxury-gold tracking-wider uppercase">
+                  <p className="text-sm font-luxury font-semibold text-primary-400 tracking-wider uppercase">
                     {destination.subtitle}
                   </p>
                 </div>
@@ -352,7 +355,7 @@ const DestinationsSection = () => {
                 <div className="space-y-2">
                   {destination.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-luxury-gold rounded-full flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-primary-400 rounded-full flex-shrink-0"></div>
                       <span className="text-xs text-luxury-white/80 font-luxury">
                         {feature}
                       </span>
@@ -364,7 +367,7 @@ const DestinationsSection = () => {
                 <div className="pt-4">
                   <Link
                     href="/destinations"
-                    className="inline-flex items-center gap-2 text-luxury-gold hover:text-luxury-white font-luxury font-semibold text-sm tracking-wider uppercase transition-colors duration-500 group-hover:gap-3"
+                    className="inline-flex items-center gap-2 text-primary-400 hover:text-luxury-white font-luxury font-semibold text-sm tracking-wider uppercase transition-colors duration-500 group-hover:gap-3"
                   >
                     Explore Destination
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-500" />

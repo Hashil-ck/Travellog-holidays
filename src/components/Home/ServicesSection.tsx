@@ -172,13 +172,16 @@ const ServicesSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="section-luxury bg-gradient-to-b from-luxury-black via-luxury-charcoal to-luxury-black relative overflow-hidden"
+      className="section-luxury bg-services-gradient relative overflow-hidden"
     >
-      {/* Luxury Background Elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-yellow-400/20 to-amber-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-rose-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"></div>
+      {/* Pattern Background */}
+      <div className="absolute inset-0 pattern-grid opacity-10 z-0"></div>
+
+      {/* Luxury Background Elements with Parallax */}
+      <div className="absolute inset-0 opacity-15 z-0">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-primary-500/30 to-transparent rounded-full blur-3xl parallax-slow"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-transparent rounded-full blur-3xl parallax-fast"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-primary-600/20 to-accent-700/10 rounded-full blur-3xl parallax-medium"></div>
       </div>
 
       <div className="container-luxury relative z-10">
@@ -196,7 +199,7 @@ const ServicesSection = () => {
           <p className="text-xl text-luxury-white/70 max-w-3xl mx-auto font-luxury font-light leading-relaxed">
             Experience the pinnacle of travel excellence with our curated
             collection of
-            <span className="text-luxury-gold font-medium">
+            <span className="text-primary-400 font-medium">
               {" "}
               bespoke services
             </span>{" "}
@@ -227,7 +230,7 @@ const ServicesSection = () => {
                   <h3 className="text-xl font-display font-bold text-luxury-white mb-2 tracking-wide">
                     {service.title}
                   </h3>
-                  <p className="text-sm font-luxury font-semibold text-luxury-gold tracking-wider uppercase">
+                  <p className="text-sm font-luxury font-semibold text-primary-400 tracking-wider uppercase">
                     {service.subtitle}
                   </p>
                 </div>
@@ -238,11 +241,11 @@ const ServicesSection = () => {
 
                 {/* Features */}
                 <div className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-3">
-                      <CheckCircle className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  {service.features.map((featureIndex, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      <CheckCircle className="h-4 w-4 text-primary-400 flex-shrink-0" />
                       <span className="text-sm text-luxury-white/80 font-luxury">
-                        {feature}
+                        {featureIndex}
                       </span>
                     </div>
                   ))}
@@ -252,7 +255,7 @@ const ServicesSection = () => {
                 <div className="pt-4">
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 text-luxury-gold hover:text-luxury-white font-luxury font-semibold text-sm tracking-wider uppercase transition-colors duration-500 group-hover:gap-3"
+                    className="inline-flex items-center gap-2 text-primary-400 hover:text-luxury-white font-luxury font-semibold text-sm tracking-wider uppercase transition-colors duration-500 group-hover:gap-3"
                   >
                     Discover More
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-500" />
@@ -261,7 +264,7 @@ const ServicesSection = () => {
               </div>
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-luxury-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
             </div>
           ))}
         </div>

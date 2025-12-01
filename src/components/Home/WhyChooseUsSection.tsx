@@ -172,13 +172,16 @@ const WhyChooseUsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="section-luxury bg-gradient-to-b from-luxury-black via-luxury-charcoal to-luxury-black relative overflow-hidden"
+      className="section-luxury bg-whychoose-gradient relative overflow-hidden"
     >
-      {/* Luxury Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-luxury-gold/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-fashion-rose/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-fashion-sapphire/20 rounded-full blur-3xl"></div>
+      {/* Pattern Background */}
+      <div className="absolute inset-0 pattern-mesh opacity-10 z-0"></div>
+
+      {/* Luxury Background Elements with Parallax */}
+      <div className="absolute inset-0 opacity-15 z-0">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-primary-500/30 to-transparent rounded-full blur-3xl parallax-medium"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-accent-600/20 to-transparent rounded-full blur-3xl parallax-fast"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-primary-600/20 to-accent-700/10 rounded-full blur-3xl parallax-slow"></div>
       </div>
 
       <div className="container-luxury relative z-10">
@@ -195,7 +198,7 @@ const WhyChooseUsSection = () => {
           </h2>
           <p className="text-xl text-luxury-white/70 max-w-3xl mx-auto font-luxury font-light leading-relaxed">
             Experience the difference of{" "}
-            <span className="text-luxury-gold font-medium">
+            <span className="text-primary-400 font-medium">
               true luxury travel
             </span>
             with our unparalleled commitment to excellence and personalized
@@ -223,7 +226,7 @@ const WhyChooseUsSection = () => {
               >
                 {stat.number}
               </div>
-              <p className="text-sm font-luxury font-semibold text-luxury-gold tracking-wider uppercase">
+              <p className="text-sm font-luxury font-semibold text-primary-400 tracking-wider uppercase">
                 {stat.label}
               </p>
             </div>
@@ -253,7 +256,7 @@ const WhyChooseUsSection = () => {
                   <h3 className="text-xl font-display font-bold text-luxury-white mb-2 tracking-wide">
                     {feature.title}
                   </h3>
-                  <p className="text-sm font-luxury font-semibold text-luxury-gold tracking-wider uppercase">
+                  <p className="text-sm font-luxury font-semibold text-primary-400 tracking-wider uppercase">
                     {feature.subtitle}
                   </p>
                 </div>
@@ -264,7 +267,7 @@ const WhyChooseUsSection = () => {
               </div>
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-luxury-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
             </div>
           ))}
         </div>
